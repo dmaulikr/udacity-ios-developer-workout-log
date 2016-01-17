@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Automatic">
+    <entity name="LogEntry" syncable="YES">
+        <attribute name="datetime" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="workoutItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutItem" inverseName="logEntries" inverseEntity="WorkoutItem" syncable="YES"/>
+    </entity>
+    <entity name="Photo" syncable="YES">
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workoutItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutItem" inverseName="photos" inverseEntity="WorkoutItem" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutItem" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="logEntries" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="LogEntry" inverseName="workoutItem" inverseEntity="LogEntry" syncable="YES"/>
+        <relationship name="photos" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Photo" inverseName="workoutItem" inverseEntity="Photo" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WorkoutItem" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="LogEntry" positionX="-54" positionY="-9" width="128" height="75"/>
+        <element name="Photo" positionX="-45" positionY="27" width="128" height="75"/>
+    </elements>
 </model>
