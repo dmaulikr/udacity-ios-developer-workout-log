@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Workout Log View Controller-->
@@ -88,9 +89,72 @@
                     <view key="view" contentMode="scaleToFill" id="ozA-VK-uA3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="8j8-zx-EHL">
+                                <rect key="frame" x="0.0" y="64" width="600" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="qTa-Re-Yg2"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="474741867.52134103">
+                                    <!--2016-01-17 16:44:27 +0000-->
+                                </date>
+                            </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Entry Name Here:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ml2-gE-zjy" userLabel="Entry Name">
+                                <rect key="frame" x="20" y="288" width="480" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xUC-oo-k4D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="os3-sO-GUJ">
+                                <rect key="frame" x="520" y="288" width="60" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="euf-4M-P4V"/>
+                                </constraints>
+                                <state key="normal" title="Search"/>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nFd-FD-ncH">
+                                <rect key="frame" x="0.0" y="326" width="600" height="274"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lw1-qO-42E">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EntryImageCollectionViewCell" id="roh-kF-AlO">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nFd-FD-ncH" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" constant="-20" id="5LO-dx-UNw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8j8-zx-EHL" secondAttribute="trailing" constant="-20" id="5nt-16-8aB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nFd-FD-ncH" secondAttribute="trailing" constant="-20" id="AG9-2O-zLW"/>
+                            <constraint firstItem="os3-sO-GUJ" firstAttribute="top" secondItem="8j8-zx-EHL" secondAttribute="bottom" constant="8" id="Ahk-Vm-kYj"/>
+                            <constraint firstItem="8j8-zx-EHL" firstAttribute="top" secondItem="jrb-K4-vB0" secondAttribute="bottom" id="AkK-mP-8YS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ml2-gE-zjy" secondAttribute="trailing" constant="80" id="JyY-gy-ma2"/>
+                            <constraint firstItem="nVT-T7-6Rc" firstAttribute="top" secondItem="nFd-FD-ncH" secondAttribute="bottom" id="c3G-kD-l0a"/>
+                            <constraint firstItem="nFd-FD-ncH" firstAttribute="top" secondItem="os3-sO-GUJ" secondAttribute="bottom" constant="8" id="cE2-d1-1s2"/>
+                            <constraint firstItem="ml2-gE-zjy" firstAttribute="top" secondItem="8j8-zx-EHL" secondAttribute="bottom" constant="8" id="g4S-eG-UhP"/>
+                            <constraint firstItem="8j8-zx-EHL" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" constant="-20" id="gc5-Wy-G9C"/>
+                            <constraint firstItem="ml2-gE-zjy" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" id="jCq-ev-fco"/>
+                            <constraint firstItem="os3-sO-GUJ" firstAttribute="leading" secondItem="ml2-gE-zjy" secondAttribute="trailing" constant="20" id="q1M-xo-nn9"/>
+                            <constraint firstItem="os3-sO-GUJ" firstAttribute="trailing" secondItem="ozA-VK-uA3" secondAttribute="trailingMargin" id="tfY-ml-yaO"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add an Entry" id="Qrd-4m-aZ7"/>
+                    <navigationItem key="navigationItem" title="Add an Entry" id="Qrd-4m-aZ7">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="X8r-Go-AcL"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdY-lv-0ro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
