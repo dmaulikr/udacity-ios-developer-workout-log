@@ -80,7 +80,7 @@
         <!--Add Entry View Controller-->
         <scene sceneID="zD5-6z-a74">
             <objects>
-                <viewController id="cPV-dE-Xab" userLabel="Add Entry View Controller" sceneMemberID="viewController">
+                <viewController id="cPV-dE-Xab" userLabel="Add Entry View Controller" customClass="AddEntryViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jrb-K4-vB0"/>
                         <viewControllerLayoutGuide type="bottom" id="nVT-T7-6Rc"/>
