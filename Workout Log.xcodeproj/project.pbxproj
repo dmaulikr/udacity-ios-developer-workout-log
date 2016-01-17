@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188B6FC1C4B29610039070E /* AppDelegate.swift */; };
-		0188B6FF1C4B29610039070E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188B6FE1C4B29610039070E /* ViewController.swift */; };
 		0188B7021C4B29610039070E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0188B7001C4B29610039070E /* Main.storyboard */; };
 		0188B7051C4B29610039070E /* Workout_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0188B7031C4B29610039070E /* Workout_Log.xcdatamodeld */; };
 		0188B7071C4B29610039070E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0188B7061C4B29610039070E /* Assets.xcassets */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		0188B6F91C4B29610039070E /* Workout Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0188B6FC1C4B29610039070E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0188B6FE1C4B29610039070E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0188B7011C4B29610039070E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0188B7041C4B29610039070E /* Workout_Log.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Workout_Log.xcdatamodel; sourceTree = "<group>"; };
 		0188B7061C4B29610039070E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				0188B6FC1C4B29610039070E /* AppDelegate.swift */,
-				0188B6FE1C4B29610039070E /* ViewController.swift */,
 				0188B7001C4B29610039070E /* Main.storyboard */,
 				0188B7061C4B29610039070E /* Assets.xcassets */,
 				0188B7081C4B29610039070E /* LaunchScreen.storyboard */,
@@ -260,7 +257,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0188B7051C4B29610039070E /* Workout_Log.xcdatamodeld in Sources */,
-				0188B6FF1C4B29610039070E /* ViewController.swift in Sources */,
 				0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +484,7 @@
 				0188B7261C4B29610039070E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0188B7271C4B29610039070E /* Build configuration list for PBXNativeTarget "Workout LogTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +493,7 @@
 				0188B7291C4B29610039070E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0188B72A1C4B29610039070E /* Build configuration list for PBXNativeTarget "Workout LogUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +502,7 @@
 				0188B72C1C4B29610039070E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
