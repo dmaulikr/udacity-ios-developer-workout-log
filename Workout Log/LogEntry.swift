@@ -9,11 +9,16 @@
 import Foundation
 
 class LogEntry {
+    struct Keys {
+        static let Name = "name"
+        static let Date = "date"
+    }
+
     var name: NSString;
     var date: NSDate;
 
-    init () {
-        name = ""
-        date = NSDate()
+    init (dictionary: [String : AnyObject]) {
+        name = dictionary[Keys.Name] as! NSString
+        date = dictionary[Keys.Date] as! NSDate
     }
 }
