@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0157B8E91C4B404700DEAA88 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157B8E81C4B404700DEAA88 /* LogEntry.swift */; };
+		0157B8EB1C4B426500DEAA88 /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */; };
 		0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188B6FC1C4B29610039070E /* AppDelegate.swift */; };
 		0188B7021C4B29610039070E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0188B7001C4B29610039070E /* Main.storyboard */; };
 		0188B7051C4B29610039070E /* Workout_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0188B7031C4B29610039070E /* Workout_Log.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0157B8E81C4B404700DEAA88 /* LogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
 		0188B6F91C4B29610039070E /* Workout Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0188B6FC1C4B29610039070E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0188B7011C4B29610039070E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				0188B70B1C4B29610039070E /* Info.plist */,
 				0188B7031C4B29610039070E /* Workout_Log.xcdatamodeld */,
 				0157B8E81C4B404700DEAA88 /* LogEntry.swift */,
+				0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */,
 			);
 			path = "Workout Log";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0188B7051C4B29610039070E /* Workout_Log.xcdatamodeld in Sources */,
+				0157B8EB1C4B426500DEAA88 /* WorkoutLogViewController.swift in Sources */,
 				0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */,
 				0157B8E91C4B404700DEAA88 /* LogEntry.swift in Sources */,
 			);

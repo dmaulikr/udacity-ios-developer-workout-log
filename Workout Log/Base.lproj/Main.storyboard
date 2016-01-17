@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Log View Controller-->
+        <!--Workout Log View Controller-->
         <scene sceneID="uyX-JS-5am">
             <objects>
-                <tableViewController id="lGm-EZ-bbs" userLabel="Log View Controller" sceneMemberID="viewController">
+                <tableViewController id="lGm-EZ-bbs" userLabel="Workout Log View Controller" customClass="WorkoutLogViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K9M-qO-fuJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
