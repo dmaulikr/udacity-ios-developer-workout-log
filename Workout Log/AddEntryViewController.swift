@@ -10,4 +10,10 @@ import Foundation
 import UIKit
 
 class AddEntryViewController: UIViewController {
+    @IBOutlet weak var entryNameTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBAction func addButtonPressed(sender: AnyObject) {
+    }
+    @IBAction func searchButtonPressed(sender: AnyObject) {
+    }
 }

@@ -26,7 +26,7 @@
                                             <rect key="frame" x="15" y="12" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RiE-vb-YDj">
@@ -113,6 +113,9 @@
                                     <constraint firstAttribute="height" constant="30" id="euf-4M-P4V"/>
                                 </constraints>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonPressed:" destination="cPV-dE-Xab" eventType="touchUpInside" id="2rm-sg-LxD"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nFd-FD-ncH">
                                 <rect key="frame" x="0.0" y="326" width="600" height="274"/>
@@ -153,8 +156,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add an Entry" id="Qrd-4m-aZ7">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="X8r-Go-AcL"/>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="X8r-Go-AcL">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="cPV-dE-Xab" id="wtV-QQ-G7I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="8j8-zx-EHL" id="1Ev-Fi-P10"/>
+                        <outlet property="entryNameTextField" destination="ml2-gE-zjy" id="eI8-vH-zRO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdY-lv-0ro" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
