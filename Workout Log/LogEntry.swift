@@ -7,18 +7,20 @@
 //
 
 import Foundation
+import CoreData
 
-class LogEntry {
-    struct Keys {
-        static let Name = "name"
-        static let Date = "date"
+class LogEntry: NSManagedObject {
+    @NSManaged var datetime: NSDate
+    @NSManaged var workoutItem: WorkoutItem
+
+    override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
 
-    var name: NSString;
-    var date: NSDate;
+    init(_datetime: NSDate, context: NSManagedObjectContext) {
+        let entity =  NSEntityDescription.entityForName("LogEntry", inManagedObjectContext: context)!
+        super.init(entity: entity, insertIntoManagedObjectContext: context)
 
-    init (dictionary: [String : AnyObject]) {
-        name = dictionary[Keys.Name] as! NSString
-        date = dictionary[Keys.Date] as! NSDate
+        datetime = _datetime
     }
 }

@@ -13,16 +13,19 @@ class WorkoutLogViewController: UITableViewController {
     var logEntries: [LogEntry] = [LogEntry]()
 
     override func viewDidLoad() {
+        /*
         logEntries.append(LogEntry(dictionary: ["name": "entry1", "date": NSDate()]))
         logEntries.append(LogEntry(dictionary: ["name": "entry2", "date": NSDate()]))
         logEntries.append(LogEntry(dictionary: ["name": "entry3", "date": NSDate()]))
         logEntries.append(LogEntry(dictionary: ["name": "entry4", "date": NSDate()]))
+*/
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return logEntries.count
     }
 
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LogEntryTableCell")!
         let entry = logEntries[indexPath.row]
@@ -32,5 +35,6 @@ class WorkoutLogViewController: UITableViewController {
         cell.detailTextLabel?.text = dateString
 
         return cell
-    }
+
+    }*/
 }
