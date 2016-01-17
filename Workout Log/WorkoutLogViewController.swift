@@ -6,13 +6,18 @@
 //  Copyright © 2016 Ying Xiong. All rights reserved.
 //
 
+import CoreData
 import Foundation
 import UIKit
 
-class WorkoutLogViewController: UITableViewController {
+class WorkoutLogViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     var logEntries: [LogEntry] = [LogEntry]()
 
     override func viewDidLoad() {
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {}
+        fetchedResultsController.delegate = self
         /*
         logEntries.append(LogEntry(dictionary: ["name": "entry1", "date": NSDate()]))
         logEntries.append(LogEntry(dictionary: ["name": "entry2", "date": NSDate()]))
@@ -37,4 +42,19 @@ class WorkoutLogViewController: UITableViewController {
         return cell
 
     }*/
+
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
+
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "LogEntry")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datetime", ascending: true)]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: self.sharedContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        return fetchedResultsController
+
+    }()
 }

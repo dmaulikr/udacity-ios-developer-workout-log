@@ -18,6 +18,7 @@
 		0188B7151C4B29610039070E /* Workout_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188B7141C4B29610039070E /* Workout_LogTests.swift */; };
 		0188B7201C4B29610039070E /* Workout_LogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188B71F1C4B29610039070E /* Workout_LogUITests.swift */; };
 		01E783AF1C4C06B900ECE9E8 /* WorkoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E783AE1C4C06B900ECE9E8 /* WorkoutItem.swift */; };
+		01E783B11C4C08B700ECE9E8 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E783B01C4C08B700ECE9E8 /* CoreDataStackManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0188B71F1C4B29610039070E /* Workout_LogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout_LogUITests.swift; sourceTree = "<group>"; };
 		0188B7211C4B29610039070E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E783AE1C4C06B900ECE9E8 /* WorkoutItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutItem.swift; sourceTree = "<group>"; };
+		01E783B01C4C08B700ECE9E8 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				0188B7031C4B29610039070E /* Workout_Log.xcdatamodeld */,
 				0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */,
 				0157B8EC1C4BF98B00DEAA88 /* AddEntryViewController.swift */,
+				01E783B01C4C08B700ECE9E8 /* CoreDataStackManager.swift */,
 			);
 			path = "Workout Log";
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				01E783AF1C4C06B900ECE9E8 /* WorkoutItem.swift in Sources */,
 				0188B7051C4B29610039070E /* Workout_Log.xcdatamodeld in Sources */,
 				0157B8EB1C4B426500DEAA88 /* WorkoutLogViewController.swift in Sources */,
+				01E783B11C4C08B700ECE9E8 /* CoreDataStackManager.swift in Sources */,
 				0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */,
 				0157B8ED1C4BF98B00DEAA88 /* AddEntryViewController.swift in Sources */,
 				0157B8E91C4B404700DEAA88 /* LogEntry.swift in Sources */,
