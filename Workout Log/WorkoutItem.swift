@@ -17,10 +17,10 @@ class WorkoutItem: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
 
-    init(_name: String, context: NSManagedObjectContext) {
+    init(name: String, context: NSManagedObjectContext) {
         let entity =  NSEntityDescription.entityForName("WorkoutItem", inManagedObjectContext: context)!
         super.init(entity: entity,insertIntoManagedObjectContext: context)
 
-        name = _name
+        self.name = name
     }
 }

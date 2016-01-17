@@ -17,10 +17,10 @@ class LogEntry: NSManagedObject {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
     }
 
-    init(_datetime: NSDate, context: NSManagedObjectContext) {
+    init(datetime: NSDate, context: NSManagedObjectContext) {
         let entity =  NSEntityDescription.entityForName("LogEntry", inManagedObjectContext: context)!
         super.init(entity: entity, insertIntoManagedObjectContext: context)
 
-        datetime = _datetime
+        self.datetime = datetime
     }
 }

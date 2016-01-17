@@ -11,37 +11,44 @@ import Foundation
 import UIKit
 
 class WorkoutLogViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    var logEntries: [LogEntry] = [LogEntry]()
-
     override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let item1 = WorkoutItem(name: "item1", context: sharedContext)
+        let entry1 = LogEntry(datetime: NSDate(), context: sharedContext)
+        entry1.workoutItem = item1
+
+        let item2 = WorkoutItem(name: "item2", context: sharedContext)
+        let entry2 = LogEntry(datetime: NSDate(), context: sharedContext)
+        entry2.workoutItem = item2
+        CoreDataStackManager.sharedInstance().saveContext()
+
         do {
             try fetchedResultsController.performFetch()
         } catch {}
         fetchedResultsController.delegate = self
-        /*
-        logEntries.append(LogEntry(dictionary: ["name": "entry1", "date": NSDate()]))
-        logEntries.append(LogEntry(dictionary: ["name": "entry2", "date": NSDate()]))
-        logEntries.append(LogEntry(dictionary: ["name": "entry3", "date": NSDate()]))
-        logEntries.append(LogEntry(dictionary: ["name": "entry4", "date": NSDate()]))
-*/
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return logEntries.count
+        let sectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
 
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("LogEntryTableCell")!
-        let entry = logEntries[indexPath.row]
+        let entry = fetchedResultsController.objectAtIndexPath(indexPath) as! LogEntry
 
-        cell.textLabel?.text = entry.name as String
-        let dateString = NSDateFormatter.localizedStringFromDate(entry.date, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+        cell.textLabel?.text = entry.workoutItem.name
+        let dateString = NSDateFormatter.localizedStringFromDate(entry.datetime, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
         cell.detailTextLabel?.text = dateString
 
         return cell
-
-    }*/
+    }
 
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
