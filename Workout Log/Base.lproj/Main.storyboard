@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Log View Controller-->
         <scene sceneID="uyX-JS-5am">
             <objects>
-                <tableViewController id="lGm-EZ-bbs" sceneMemberID="viewController">
+                <tableViewController id="lGm-EZ-bbs" userLabel="Log View Controller" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K9M-qO-fuJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="lGm-EZ-bbs" id="3Y1-cZ-GfI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Dih-Bo-qNn"/>
+                    <navigationItem key="navigationItem" title="Workout Log" id="Dih-Bo-qNn" userLabel="Workout Log"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M2A-AB-3Vy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
