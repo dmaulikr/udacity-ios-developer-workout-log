@@ -27,9 +27,14 @@ class AddEntryViewController: UIViewController {
     }
 
     @IBAction func searchButtonPressed(sender: AnyObject) {
+        flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs) -> Void in
+            print(imageURLs)
+        }
     }
 
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
+
+    var flickrPhotoDownloadManager = FlickrPhotoDownloadManager()
 }
