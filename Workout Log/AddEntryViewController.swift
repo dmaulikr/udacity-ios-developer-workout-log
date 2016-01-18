@@ -10,7 +10,7 @@ import CoreData
 import Foundation
 import UIKit
 
-class AddEntryViewController: UIViewController, UICollectionViewDataSource {
+class AddEntryViewController: UIViewController, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var entryNameTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -19,7 +19,10 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {}
+        fetchedResultsController.delegate = self
         collectionView.dataSource = self
     }
 
@@ -40,6 +43,17 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource {
 
     @IBAction func searchButtonPressed(sender: AnyObject) {
         self.view.endEditing(true)
+        // Check if the workout item already exists.
+        for existedWorkoutItemAnyObject in fetchedResultsController.sections![0].objects! {
+            let existedWorkoutItem = existedWorkoutItemAnyObject as! WorkoutItem
+            if (existedWorkoutItem.name == self.entryNameTextField.text!) {
+                workoutItem = existedWorkoutItem
+                collectionView.reloadData()
+                self.addButton.enabled = true
+                return
+            }
+        }
+        // Create a new workout item, and download images from flickr.
         flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 self.workoutItem = WorkoutItem(name: self.entryNameTextField.text!, context: self.sharedContext)
@@ -89,6 +103,8 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource {
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
+
+    lazy var fetchedResultsController: NSFetchedResultsController = CoreDataStackManager.getFetchedResultsController("WorkoutItem", sortKey: "name", assending: true)
 
     var flickrPhotoDownloadManager = FlickrPhotoDownloadManager()
 }
