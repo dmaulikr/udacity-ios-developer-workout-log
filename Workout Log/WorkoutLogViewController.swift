@@ -44,9 +44,7 @@ class WorkoutLogViewController: UITableViewController, NSFetchedResultsControlle
         let entry = fetchedResultsController.objectAtIndexPath(indexPath) as! LogEntry
 
         cell.textLabel?.text = entry.workoutItem.name
-        let dateString = NSDateFormatter.localizedStringFromDate(entry.datetime, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
-        cell.detailTextLabel?.text = dateString
-
+        cell.detailTextLabel?.text = entry.datetimeString()
         return cell
     }
 

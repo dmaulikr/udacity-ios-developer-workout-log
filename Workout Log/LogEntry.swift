@@ -23,4 +23,8 @@ class LogEntry: NSManagedObject {
 
         self.datetime = datetime
     }
+
+    func datetimeString() -> String {
+        return NSDateFormatter.localizedStringFromDate(datetime, dateStyle: .MediumStyle, timeStyle: .ShortStyle)
+    }
 }
