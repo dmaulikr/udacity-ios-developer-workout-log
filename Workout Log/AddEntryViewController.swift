@@ -15,7 +15,6 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var collectionViewFlowLayout: UICollectionViewFlowLayout!
     var workoutItem: WorkoutItem?
 
     override func viewDidLoad() {
@@ -40,6 +39,7 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource {
     }
 
     @IBAction func searchButtonPressed(sender: AnyObject) {
+        self.view.endEditing(true)
         flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 self.workoutItem = WorkoutItem(name: self.entryNameTextField.text!, context: self.sharedContext)
@@ -72,9 +72,10 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource {
             cell.textField.text = "Loading..."
             photo.getImage({() -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
-                    let c = self.collectionView.cellForItemAtIndexPath(indexPath) as! AddEntryPhotoCell
-                    c.textField.hidden = true
-                    c.imageView.image = photo.image
+                    if let c = self.collectionView.cellForItemAtIndexPath(indexPath) as? AddEntryPhotoCell {
+                        c.textField.hidden = true
+                        c.imageView.image = photo.image
+                    }
                 })
             })
         } else {

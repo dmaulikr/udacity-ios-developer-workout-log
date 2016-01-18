@@ -214,7 +214,6 @@
                     <connections>
                         <outlet property="addButton" destination="sDx-Lp-ks4" id="wdk-dD-Sqs"/>
                         <outlet property="collectionView" destination="nFd-FD-ncH" id="hIw-qt-u27"/>
-                        <outlet property="collectionViewFlowLayout" destination="Lw1-qO-42E" id="5XV-no-QST"/>
                         <outlet property="datePicker" destination="8j8-zx-EHL" id="1Ev-Fi-P10"/>
                         <outlet property="entryNameTextField" destination="ml2-gE-zjy" id="eI8-vH-zRO"/>
                     </connections>
