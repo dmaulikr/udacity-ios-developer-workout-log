@@ -13,11 +13,16 @@ import UIKit
 class AddEntryViewController: UIViewController {
     @IBOutlet weak var entryNameTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    var workoutItem: WorkoutItem?
+
+    override func viewWillAppear(animated: Bool) {
+        addButton.enabled = false
+    }
 
     @IBAction func addButtonPressed(sender: AnyObject) {
-        let workoutItem = WorkoutItem(name: entryNameTextField.text!, context: sharedContext)
         let logEntry = LogEntry(datetime: datePicker.date, context: sharedContext)
-        logEntry.workoutItem = workoutItem
+        logEntry.workoutItem = workoutItem!
         CoreDataStackManager.sharedInstance().saveContext()
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -28,7 +33,15 @@ class AddEntryViewController: UIViewController {
 
     @IBAction func searchButtonPressed(sender: AnyObject) {
         flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs) -> Void in
-            print(imageURLs)
+            dispatch_async(dispatch_get_main_queue(), {
+                self.workoutItem = WorkoutItem(name: self.entryNameTextField.text!, context: self.sharedContext)
+                for imageURL in imageURLs {
+                    let photo = Photo(imageURL: "\(imageURL)", context: self.sharedContext)
+                    photo.workoutItem = self.workoutItem!
+                }
+                CoreDataStackManager.sharedInstance().saveContext()
+                self.addButton.enabled = true
+            })
         }
     }
 

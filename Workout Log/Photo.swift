@@ -11,6 +11,7 @@ import CoreData
 
 class Photo: NSManagedObject {
     @NSManaged var imageURL: String
+    @NSManaged var workoutItem: WorkoutItem
 
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         super.init(entity: entity, insertIntoManagedObjectContext: context)

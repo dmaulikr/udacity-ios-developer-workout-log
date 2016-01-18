@@ -189,6 +189,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="sDx-Lp-ks4" id="wdk-dD-Sqs"/>
                         <outlet property="datePicker" destination="8j8-zx-EHL" id="1Ev-Fi-P10"/>
                         <outlet property="entryNameTextField" destination="ml2-gE-zjy" id="eI8-vH-zRO"/>
                     </connections>

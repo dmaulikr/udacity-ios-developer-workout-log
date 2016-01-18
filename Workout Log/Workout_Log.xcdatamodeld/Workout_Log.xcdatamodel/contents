@@ -5,7 +5,7 @@
         <relationship name="workoutItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutItem" inverseName="logEntries" inverseEntity="WorkoutItem" syncable="YES"/>
     </entity>
     <entity name="Photo" representedClassName=".Photo" syncable="YES">
-        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="workoutItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WorkoutItem" inverseName="photos" inverseEntity="WorkoutItem" syncable="YES"/>
     </entity>
     <entity name="WorkoutItem" representedClassName=".WorkoutItem" syncable="YES">
