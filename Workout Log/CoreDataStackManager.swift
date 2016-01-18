@@ -20,6 +20,16 @@ class CoreDataStackManager {
         return Static.instance
     }
 
+    class func getFetchedResultsController(entityName: String, sortKey: String, assending: Bool) -> NSFetchedResultsController {
+        let fetchRequest = NSFetchRequest(entityName: entityName)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: assending)]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        return fetchedResultsController
+    }
+
     lazy var applicationDocumentsDirectory: NSURL = {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]

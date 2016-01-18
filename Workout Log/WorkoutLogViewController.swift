@@ -54,13 +54,5 @@ class WorkoutLogViewController: UITableViewController, NSFetchedResultsControlle
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
 
-    lazy var fetchedResultsController: NSFetchedResultsController = {
-        let fetchRequest = NSFetchRequest(entityName: "LogEntry")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "datetime", ascending: true)]
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-            managedObjectContext: self.sharedContext,
-            sectionNameKeyPath: nil,
-            cacheName: nil)
-        return fetchedResultsController
-    }()
+    lazy var fetchedResultsController: NSFetchedResultsController = CoreDataStackManager.getFetchedResultsController("LogEntry", sortKey: "datetime", assending: true)
 }
