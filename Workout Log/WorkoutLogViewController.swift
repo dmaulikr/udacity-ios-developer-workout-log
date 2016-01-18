@@ -35,6 +35,14 @@ class WorkoutLogViewController: UITableViewController, NSFetchedResultsControlle
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let workoutItemViewController = storyboard!.instantiateViewControllerWithIdentifier("WorkoutItemViewController") as! WorkoutItemViewController
+        let entry = fetchedResultsController.objectAtIndexPath(indexPath) as! LogEntry
+
+        workoutItemViewController.workoutItem = entry.workoutItem
+        navigationController!.pushViewController(workoutItemViewController, animated: true)
+    }
+
     var sharedContext: NSManagedObjectContext {
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }

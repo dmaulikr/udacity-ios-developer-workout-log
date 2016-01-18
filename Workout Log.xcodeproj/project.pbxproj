@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010B339A1C4CBFFA00FAE3CB /* WorkoutItemPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B33991C4CBFFA00FAE3CB /* WorkoutItemPhotoCell.swift */; };
+		010B339C1C4CC0BE00FAE3CB /* WorkoutItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010B339B1C4CC0BE00FAE3CB /* WorkoutItemViewController.swift */; };
 		0157B8E91C4B404700DEAA88 /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157B8E81C4B404700DEAA88 /* LogEntry.swift */; };
 		0157B8EB1C4B426500DEAA88 /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */; };
 		0157B8ED1C4BF98B00DEAA88 /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0157B8EC1C4BF98B00DEAA88 /* AddEntryViewController.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		010B33991C4CBFFA00FAE3CB /* WorkoutItemPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutItemPhotoCell.swift; sourceTree = "<group>"; };
+		010B339B1C4CC0BE00FAE3CB /* WorkoutItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutItemViewController.swift; sourceTree = "<group>"; };
 		0157B8E81C4B404700DEAA88 /* LogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
 		0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
 		0157B8EC1C4BF98B00DEAA88 /* AddEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				0157B8EC1C4BF98B00DEAA88 /* AddEntryViewController.swift */,
 				0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */,
+				010B339B1C4CC0BE00FAE3CB /* WorkoutItemViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				01E304891C4C8C5200E4D822 /* Photo.swift in Sources */,
 				01E783B11C4C08B700ECE9E8 /* CoreDataStackManager.swift in Sources */,
 				0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */,
+				010B339C1C4CC0BE00FAE3CB /* WorkoutItemViewController.swift in Sources */,
 				0157B8ED1C4BF98B00DEAA88 /* AddEntryViewController.swift in Sources */,
 				01E304871C4C830F00E4D822 /* FlickrPhotoDownloadManager.swift in Sources */,
 				010B339A1C4CBFFA00FAE3CB /* WorkoutItemPhotoCell.swift in Sources */,

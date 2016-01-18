@@ -38,9 +38,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="5Tt-Zw-EXu" kind="show" id="PyX-8A-oin"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,7 +60,7 @@
         <!--Workout Item Photos View Controller-->
         <scene sceneID="Kf4-GS-hId">
             <objects>
-                <collectionViewController id="5Tt-Zw-EXu" userLabel="Workout Item Photos View Controller" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="WorkoutItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Tt-Zw-EXu" userLabel="Workout Item Photos View Controller" customClass="WorkoutItemViewController" customModule="Workout_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IRo-42-Dqo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +72,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WorkoutItemPhoto" id="80h-Ke-kAr" customClass="WorkoutItemPhotoCell" customModule="Workout_Log" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="250" height="250"/>
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
