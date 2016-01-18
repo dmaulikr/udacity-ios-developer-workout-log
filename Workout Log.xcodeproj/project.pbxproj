@@ -107,6 +107,7 @@
 		0188B6FB1C4B29610039070E /* Workout Log */ = {
 			isa = PBXGroup;
 			children = (
+				01E304851C4C774300E4D822 /* ViewControllers */,
 				01E783AD1C4C05D500ECE9E8 /* Model */,
 				0188B6FC1C4B29610039070E /* AppDelegate.swift */,
 				0188B7001C4B29610039070E /* Main.storyboard */,
@@ -114,8 +115,6 @@
 				0188B7081C4B29610039070E /* LaunchScreen.storyboard */,
 				0188B70B1C4B29610039070E /* Info.plist */,
 				0188B7031C4B29610039070E /* Workout_Log.xcdatamodeld */,
-				0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */,
-				0157B8EC1C4BF98B00DEAA88 /* AddEntryViewController.swift */,
 				01E783B01C4C08B700ECE9E8 /* CoreDataStackManager.swift */,
 			);
 			path = "Workout Log";
@@ -137,6 +136,15 @@
 				0188B7211C4B29610039070E /* Info.plist */,
 			);
 			path = "Workout LogUITests";
+			sourceTree = "<group>";
+		};
+		01E304851C4C774300E4D822 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0157B8EC1C4BF98B00DEAA88 /* AddEntryViewController.swift */,
+				0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		01E783AD1C4C05D500ECE9E8 /* Model */ = {

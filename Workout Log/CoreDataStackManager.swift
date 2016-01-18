@@ -49,7 +49,6 @@ class CoreDataStackManager {
         return coordinator
     }()
 
-
     lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)

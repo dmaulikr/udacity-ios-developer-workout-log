@@ -62,6 +62,5 @@ class WorkoutLogViewController: UITableViewController, NSFetchedResultsControlle
             sectionNameKeyPath: nil,
             cacheName: nil)
         return fetchedResultsController
-
     }()
 }
