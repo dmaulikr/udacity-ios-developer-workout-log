@@ -24,7 +24,7 @@ class CoreDataStackManager {
         let fetchRequest = NSFetchRequest(entityName: entityName)
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: sortKey, ascending: assending)]
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-            managedObjectContext: CoreDataStackManager.sharedInstance().managedObjectContext,
+            managedObjectContext: sharedInstance().managedObjectContext,
             sectionNameKeyPath: nil,
             cacheName: nil)
         return fetchedResultsController
