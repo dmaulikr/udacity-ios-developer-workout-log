@@ -128,20 +128,39 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nFd-FD-ncH">
                                 <rect key="frame" x="0.0" y="326" width="600" height="274"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lw1-qO-42E">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="200" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EntryImageCollectionViewCell" id="roh-kF-AlO">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddEntryPhotoCell" id="roh-kF-AlO" userLabel="PhotoCollectionViewCell" customClass="AddEntryPhotoCell" customModule="Workout_Log" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sLR-Ay-D9T">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4N-VL-tLx">
+                                                    <rect key="frame" x="52" y="85" width="97" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="P4N-VL-tLx" firstAttribute="centerY" secondItem="sLR-Ay-D9T" secondAttribute="centerY" id="4Zs-BY-FT4"/>
+                                            <constraint firstItem="sLR-Ay-D9T" firstAttribute="leading" secondItem="roh-kF-AlO" secondAttribute="leadingMargin" constant="-8" id="5kl-U5-asr"/>
+                                            <constraint firstItem="P4N-VL-tLx" firstAttribute="leading" secondItem="roh-kF-AlO" secondAttribute="leadingMargin" constant="44" id="EjV-UK-Ymg"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="sLR-Ay-D9T" secondAttribute="bottom" constant="-8" id="JeA-rI-oT0"/>
+                                            <constraint firstItem="P4N-VL-tLx" firstAttribute="centerX" secondItem="sLR-Ay-D9T" secondAttribute="centerX" id="b6B-Gh-CPC"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="sLR-Ay-D9T" secondAttribute="trailing" constant="-8" id="ltI-J3-koT"/>
+                                            <constraint firstItem="sLR-Ay-D9T" firstAttribute="top" secondItem="roh-kF-AlO" secondAttribute="topMargin" constant="-8" id="zgb-nD-csC"/>
+                                        </constraints>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

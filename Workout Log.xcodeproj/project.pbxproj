@@ -19,6 +19,7 @@
 		0188B7201C4B29610039070E /* Workout_LogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0188B71F1C4B29610039070E /* Workout_LogUITests.swift */; };
 		01E304871C4C830F00E4D822 /* FlickrPhotoDownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E304861C4C830F00E4D822 /* FlickrPhotoDownloadManager.swift */; };
 		01E304891C4C8C5200E4D822 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E304881C4C8C5200E4D822 /* Photo.swift */; };
+		01E3048C1C4CAFFC00E4D822 /* AddEntryPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E3048B1C4CAFFC00E4D822 /* AddEntryPhotoCell.swift */; };
 		01E783AF1C4C06B900ECE9E8 /* WorkoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E783AE1C4C06B900ECE9E8 /* WorkoutItem.swift */; };
 		01E783B11C4C08B700ECE9E8 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E783B01C4C08B700ECE9E8 /* CoreDataStackManager.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		0188B7211C4B29610039070E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01E304861C4C830F00E4D822 /* FlickrPhotoDownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrPhotoDownloadManager.swift; sourceTree = "<group>"; };
 		01E304881C4C8C5200E4D822 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		01E3048B1C4CAFFC00E4D822 /* AddEntryPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryPhotoCell.swift; sourceTree = "<group>"; };
 		01E783AE1C4C06B900ECE9E8 /* WorkoutItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutItem.swift; sourceTree = "<group>"; };
 		01E783B01C4C08B700ECE9E8 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 		0188B6FB1C4B29610039070E /* Workout Log */ = {
 			isa = PBXGroup;
 			children = (
+				01E3048A1C4CAFBE00E4D822 /* View */,
 				01E304851C4C774300E4D822 /* ViewControllers */,
 				01E783AD1C4C05D500ECE9E8 /* Model */,
 				0188B6FC1C4B29610039070E /* AppDelegate.swift */,
@@ -150,6 +153,14 @@
 				0157B8EA1C4B426500DEAA88 /* WorkoutLogViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		01E3048A1C4CAFBE00E4D822 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01E3048B1C4CAFFC00E4D822 /* AddEntryPhotoCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		01E783AD1C4C05D500ECE9E8 /* Model */ = {
@@ -296,6 +307,7 @@
 				01E783AF1C4C06B900ECE9E8 /* WorkoutItem.swift in Sources */,
 				0188B7051C4B29610039070E /* Workout_Log.xcdatamodeld in Sources */,
 				0157B8EB1C4B426500DEAA88 /* WorkoutLogViewController.swift in Sources */,
+				01E3048C1C4CAFFC00E4D822 /* AddEntryPhotoCell.swift in Sources */,
 				01E304891C4C8C5200E4D822 /* Photo.swift in Sources */,
 				01E783B11C4C08B700ECE9E8 /* CoreDataStackManager.swift in Sources */,
 				0188B6FD1C4B29610039070E /* AppDelegate.swift in Sources */,
