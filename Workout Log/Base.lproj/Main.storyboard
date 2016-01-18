@@ -39,7 +39,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="aXA-LX-Jh3" kind="show" id="6a3-6a-P4Y"/>
+                                    <segue destination="5Tt-Zw-EXu" kind="show" id="PyX-8A-oin"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -60,23 +60,61 @@
             </objects>
             <point key="canvasLocation" x="-1075" y="807"/>
         </scene>
-        <!--Entry Detail View Controller-->
-        <scene sceneID="5fK-t5-IPh">
+        <!--Workout Item Photos View Controller-->
+        <scene sceneID="Kf4-GS-hId">
             <objects>
-                <viewController id="aXA-LX-Jh3" userLabel="Entry Detail View Controller" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9Ne-hx-iIJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="PiB-4L-wlS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V16-HP-LcM">
+                <collectionViewController id="5Tt-Zw-EXu" userLabel="Workout Item Photos View Controller" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IRo-42-Dqo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PhO-Ir-DKB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rRS-rA-P0c">
+                            <size key="itemSize" width="250" height="250"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WorkoutItemPhoto" id="80h-Ke-kAr" customClass="WorkoutItemPhotoCell" customModule="Workout_Log" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-lA-ftD">
+                                            <rect key="frame" x="8" y="8" width="234" height="234"/>
+                                        </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="efP-Da-dMz">
+                                            <rect key="frame" x="113" y="110" width="25" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="Adz-lA-ftD" firstAttribute="top" secondItem="80h-Ke-kAr" secondAttribute="topMargin" id="PeW-qS-sR7"/>
+                                    <constraint firstItem="Adz-lA-ftD" firstAttribute="leading" secondItem="80h-Ke-kAr" secondAttribute="leadingMargin" id="aVf-Eq-Mag"/>
+                                    <constraint firstItem="efP-Da-dMz" firstAttribute="centerY" secondItem="80h-Ke-kAr" secondAttribute="centerY" id="cBv-YX-tG6"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Adz-lA-ftD" secondAttribute="trailing" id="dKE-25-ocr"/>
+                                    <constraint firstItem="efP-Da-dMz" firstAttribute="centerX" secondItem="80h-Ke-kAr" secondAttribute="centerX" id="kRP-ZR-X3R"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Adz-lA-ftD" secondAttribute="bottom" id="uwj-bY-tgX"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="Adz-lA-ftD" id="pcN-Ad-Sn2"/>
+                                    <outlet property="textField" destination="efP-Da-dMz" id="Mw5-7c-CbD"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5Tt-Zw-EXu" id="fVc-ad-Ql0"/>
+                            <outlet property="delegate" destination="5Tt-Zw-EXu" id="fm6-7N-Ihs"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4y-Xm-6GE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1075" y="1507"/>
+            <point key="canvasLocation" x="-1075" y="1516"/>
         </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="zD5-6z-a74">
