@@ -11,26 +11,13 @@ import Foundation
 import UIKit
 
 class WorkoutLogViewController: UITableViewController, NSFetchedResultsControllerDelegate {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let item1 = WorkoutItem(name: "item1", context: sharedContext)
-        let entry1 = LogEntry(datetime: NSDate(), context: sharedContext)
-        entry1.workoutItem = item1
-
-        let item2 = WorkoutItem(name: "item2", context: sharedContext)
-        let entry2 = LogEntry(datetime: NSDate(), context: sharedContext)
-        entry2.workoutItem = item2
-        CoreDataStackManager.sharedInstance().saveContext()
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
         do {
             try fetchedResultsController.performFetch()
         } catch {}
         fetchedResultsController.delegate = self
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
         tableView.reloadData()
     }
 
@@ -52,5 +39,5 @@ class WorkoutLogViewController: UITableViewController, NSFetchedResultsControlle
         return CoreDataStackManager.sharedInstance().managedObjectContext
     }
 
-    lazy var fetchedResultsController: NSFetchedResultsController = CoreDataStackManager.getFetchedResultsController("LogEntry", sortKey: "datetime", assending: true)
+    lazy var fetchedResultsController: NSFetchedResultsController = CoreDataStackManager.getFetchedResultsController("LogEntry", sortKey: "datetime", assending: false)
 }
