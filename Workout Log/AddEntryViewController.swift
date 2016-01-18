@@ -12,6 +12,7 @@ import UIKit
 
 class AddEntryViewController: UIViewController, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var entryNameTextField: UITextField!
+    @IBOutlet weak var networkIndicatorTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -27,6 +28,7 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource, NSFe
     }
 
     override func viewWillAppear(animated: Bool) {
+        networkIndicatorTextField.hidden = true
         addButton.enabled = false
     }
 
@@ -54,6 +56,8 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource, NSFe
             }
         }
         // Create a new workout item, and download images from flickr.
+        networkIndicatorTextField.hidden = false
+        networkIndicatorTextField.text = "Finding images from Flickr..."
         flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 self.workoutItem = WorkoutItem(name: self.entryNameTextField.text!, context: self.sharedContext)
@@ -64,6 +68,7 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource, NSFe
                 CoreDataStackManager.sharedInstance().saveContext()
                 self.collectionView.reloadData()
                 self.addButton.enabled = true
+                self.networkIndicatorTextField.hidden = true
             })
         }
     }

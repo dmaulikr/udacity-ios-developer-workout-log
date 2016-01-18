@@ -212,6 +212,19 @@
                                     <!--2016-01-17 16:44:27 +0000-->
                                 </date>
                             </datePicker>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPF-Le-uPE">
+                                <rect key="frame" x="0.0" y="448" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="sFP-cK-eZH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="sFP-cK-eZH"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -221,23 +234,21 @@
                             <constraint firstItem="JJi-93-mF8" firstAttribute="top" secondItem="jrb-K4-vB0" secondAttribute="bottom" id="9Gy-4G-2Jm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nFd-FD-ncH" secondAttribute="trailing" constant="-20" id="AG9-2O-zLW"/>
                             <constraint firstItem="os3-sO-GUJ" firstAttribute="top" secondItem="8j8-zx-EHL" secondAttribute="bottom" constant="8" id="Ahk-Vm-kYj"/>
-                            <constraint firstItem="8j8-zx-EHL" firstAttribute="top" secondItem="jrb-K4-vB0" secondAttribute="bottom" id="AkK-mP-8YS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ml2-gE-zjy" secondAttribute="trailing" constant="80" id="JyY-gy-ma2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lPF-Le-uPE" secondAttribute="trailing" constant="-20" id="NnZ-ur-96E"/>
                             <constraint firstItem="JJi-93-mF8" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" constant="-20" id="TMT-y5-w6k"/>
                             <constraint firstItem="nVT-T7-6Rc" firstAttribute="top" secondItem="nFd-FD-ncH" secondAttribute="bottom" id="c3G-kD-l0a"/>
                             <constraint firstItem="nFd-FD-ncH" firstAttribute="top" secondItem="os3-sO-GUJ" secondAttribute="bottom" constant="8" id="cE2-d1-1s2"/>
+                            <constraint firstItem="lPF-Le-uPE" firstAttribute="centerY" secondItem="nFd-FD-ncH" secondAttribute="centerY" id="d8g-d2-uRT"/>
                             <constraint firstItem="ml2-gE-zjy" firstAttribute="top" secondItem="8j8-zx-EHL" secondAttribute="bottom" constant="8" id="g4S-eG-UhP"/>
                             <constraint firstItem="8j8-zx-EHL" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" constant="-20" id="gc5-Wy-G9C"/>
                             <constraint firstItem="ml2-gE-zjy" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" id="jCq-ev-fco"/>
+                            <constraint firstItem="lPF-Le-uPE" firstAttribute="centerX" secondItem="nFd-FD-ncH" secondAttribute="centerX" id="nDw-8z-B9e"/>
                             <constraint firstItem="os3-sO-GUJ" firstAttribute="leading" secondItem="ml2-gE-zjy" secondAttribute="trailing" constant="20" id="q1M-xo-nn9"/>
                             <constraint firstItem="os3-sO-GUJ" firstAttribute="trailing" secondItem="ozA-VK-uA3" secondAttribute="trailingMargin" id="tfY-ml-yaO"/>
+                            <constraint firstItem="lPF-Le-uPE" firstAttribute="leading" secondItem="ozA-VK-uA3" secondAttribute="leadingMargin" constant="-20" id="ufI-zI-KKq"/>
                             <constraint firstItem="8j8-zx-EHL" firstAttribute="top" secondItem="JJi-93-mF8" secondAttribute="bottom" id="zj7-6x-0Zh"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="AkK-mP-8YS"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add an Entry" id="Qrd-4m-aZ7">
                         <barButtonItem key="rightBarButtonItem" title="Add" id="X8r-Go-AcL">
@@ -251,6 +262,7 @@
                         <outlet property="collectionView" destination="nFd-FD-ncH" id="hIw-qt-u27"/>
                         <outlet property="datePicker" destination="8j8-zx-EHL" id="1Ev-Fi-P10"/>
                         <outlet property="entryNameTextField" destination="ml2-gE-zjy" id="eI8-vH-zRO"/>
+                        <outlet property="networkIndicatorTextField" destination="lPF-Le-uPE" id="ai7-m4-6Ep"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bdY-lv-0ro" userLabel="First Responder" sceneMemberID="firstResponder"/>
