@@ -12,6 +12,7 @@ import CoreData
 class WorkoutItem: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var logEntries: [LogEntry]
+    @NSManaged var photos: [Photo]
 
     override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
         super.init(entity: entity, insertIntoManagedObjectContext: context)
