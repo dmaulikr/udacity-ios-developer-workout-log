@@ -42,12 +42,16 @@ class Photo: NSManagedObject {
         }
     }
 
-    func getImage(completionHandler: () -> Void) {
+    func getImage(completionHandler: (success:Bool) -> Void) {
         let session = NSURLSession.sharedSession()
         let request = NSURLRequest(URL: NSURL(string: imageURL)!)
         let task = session.dataTaskWithRequest(request) {data, response, downloadError in
-            data?.writeToFile(self.imageFilename, atomically: true)
-            completionHandler()
+            if downloadError == nil {
+                data?.writeToFile(self.imageFilename, atomically: true)
+                completionHandler(success: true)
+            } else {
+                completionHandler(success: false)
+            }
         }
         task.resume()
     }

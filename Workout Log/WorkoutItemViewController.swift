@@ -24,11 +24,16 @@ class WorkoutItemViewController: UICollectionViewController {
             cell.imageView.image = nil
             cell.textField.hidden = false
             cell.textField.text = "Loading..."
-            photo.getImage({() -> Void in
+            photo.getImage({(success) -> Void in
                 dispatch_async(dispatch_get_main_queue(), {
                     if let c = self.collectionView!.cellForItemAtIndexPath(indexPath) as? AddEntryPhotoCell {
-                        c.textField.hidden = true
-                        c.imageView.image = photo.image
+                        if success {
+                            c.textField.hidden = true
+                            c.imageView.image = photo.image
+                        } else {
+                            c.textField.hidden = false
+                            c.textField.text = "Failed to Load."
+                        }
                     }
                 })
             })
