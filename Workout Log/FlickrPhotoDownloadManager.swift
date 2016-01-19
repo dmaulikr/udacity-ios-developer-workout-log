@@ -17,7 +17,7 @@ class FlickrPhotoDownloadManager {
     let DATA_FORMAT = "json"
     let NO_JSON_CALLBACK = "1"
 
-    func getImageURLsFromFlickrBySearchPhrase(searchPhrase: String, completion: (([NSURL]) -> Void)?) {
+    func getImageURLsFromFlickrBySearchPhrase(searchPhrase: String, completion: (([NSURL], success: Bool) -> Void)?) {
         let methodArguments: [String: String!] = [
             "method": METHOD_NAME,
             "api_key": API_KEY,
@@ -38,6 +38,9 @@ class FlickrPhotoDownloadManager {
             /* GUARD: Was there an error? */
             guard (error == nil) else {
                 print("There was an error with your request: \(error)")
+                if completion != nil {
+                    completion!([NSURL](), success: false)
+                }
                 return
             }
 
@@ -49,6 +52,9 @@ class FlickrPhotoDownloadManager {
                     print("Your request returned an invalid response! Response: \(response)!")
                 } else {
                     print("Your request returned an invalid response!")
+                }
+                if completion != nil {
+                    completion!([NSURL](), success: false)
                 }
                 return
             }
@@ -97,7 +103,7 @@ class FlickrPhotoDownloadManager {
     }
 
 
-    func getImageURLsFromFlickrWithPage(methodArguments: [String : AnyObject], pageNumber: Int, completion:  (([NSURL]) -> Void)?) {
+    func getImageURLsFromFlickrWithPage(methodArguments: [String : AnyObject], pageNumber: Int, completion:  (([NSURL], success: Bool) -> Void)?) {
         /* Add the page to the method's arguments */
         var withPageDictionary = methodArguments
         withPageDictionary["page"] = pageNumber
@@ -169,7 +175,7 @@ class FlickrPhotoDownloadManager {
             }
 
             if let completion = completion {
-                completion(imageURLs)
+                completion(imageURLs, success: true)
             }
         }
 

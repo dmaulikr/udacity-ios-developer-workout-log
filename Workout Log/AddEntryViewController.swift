@@ -58,17 +58,23 @@ class AddEntryViewController: UIViewController, UICollectionViewDataSource, NSFe
         // Create a new workout item, and download images from flickr.
         networkIndicatorTextField.hidden = false
         networkIndicatorTextField.text = "Finding images from Flickr..."
-        flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs) -> Void in
+        flickrPhotoDownloadManager.getImageURLsFromFlickrBySearchPhrase(entryNameTextField.text!) {(imageURLs, success) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
-                self.workoutItem = WorkoutItem(name: self.entryNameTextField.text!, context: self.sharedContext)
-                for imageURL in imageURLs {
-                    let photo = Photo(imageURL: "\(imageURL)", context: self.sharedContext)
-                    photo.workoutItem = self.workoutItem!
+                if success {
+                    self.workoutItem = WorkoutItem(name: self.entryNameTextField.text!, context: self.sharedContext)
+                    for imageURL in imageURLs {
+                        let photo = Photo(imageURL: "\(imageURL)", context: self.sharedContext)
+                        photo.workoutItem = self.workoutItem!
+                    }
+                    CoreDataStackManager.sharedInstance().saveContext()
+                    self.collectionView.reloadData()
+                    self.addButton.enabled = true
+                    self.networkIndicatorTextField.hidden = true
+                } else {
+                    let alert = UIAlertController(title: "Network Error", message: "Connect and Try Again.", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
                 }
-                CoreDataStackManager.sharedInstance().saveContext()
-                self.collectionView.reloadData()
-                self.addButton.enabled = true
-                self.networkIndicatorTextField.hidden = true
             })
         }
     }
